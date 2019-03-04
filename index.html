@@ -1,0 +1,59 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Basin map test</title>
+  <meta name="description" content="Basin map">
+  <meta name="author" content="CTUIR">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="imageresizer.js"></script>
+  
+  <style>
+	#basins-map {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		max-width: 100%;
+		max-height: 100%;
+		margin: auto;
+		overflow: auto;
+	}	
+
+  </style>
+	
+</head>
+<body>
+
+<div id="container">
+	<img src="Basins.jpg" id="basins-map" alt="" usemap="#themap">
+	<map class="map-image" name="themap" >
+		<area id="walla-walla" href="#" onclick="alert('navigate to walla walla');" onmouseover="show('Basins_WallaWalla.jpg')" coords="1168,123,1221,212,1361,252,1533,227,1628,284,1643,369,1582,534,1480,598,1493,651,1454,708,1384,876,1249,899,1079,840,1011,748,920,757,793,638,742,589,814,570,935,441,1024,250" shape="poly">
+		<area id="umatilla" onmouseover="show('Basins_Umatilla.jpg')" coords="1011,780,1124,924,1338,899,1399,963,1323,1090,1331,1189,1211,1264,1170,1240,1098,1268,1105,1317,1058,1342,994,1314,861,1418,729,1423,608,1495,488,1507,496,1459,420,1304,314,1287,246,1022,301,924,428,780,547,818,712,727,869,827" shape="poly">
+		<area id="john-day" onmouseover="show('Basins_JohnDay.jpg')" coords="127,1736,717,1444,844,1446,1022,1552,973,1609,1081,1768,1166,1766,1238,1787,1247,1861,1189,1887,1206,1989,1026,2040,1030,2080,1187,2160,1109,2311,963,2169,886,2150,806,2216,625,2139,575,2211,413,2184,373,2205,316,2158,261,2082,199,1978,271,1874,195,1838" shape="poly">
+		<area id="grande-ronde" onmouseover="show('Basins_GrandeRonde.jpg')" coords="873,1429,1035,1546,996,1603,1090,1745,1230,1758,1327,1556,1401,1578,1471,1548,1488,1516,1556,1607,1615,1586,1647,1639,1726,1639,1810,1586,1891,1597,1931,1539,1993,1561,2037,1503,2129,1276,2129,1198,2283,973,2262,895,2190,579,2063,570,1847,520,1749,547,1707,494,1671,539,1575,566,1522,577,1501,670,1482,793,1403,888,1418,954,1410,1001,1344,1094,1363,1179,1251,1272,1174,1264,1088,1361,984,1325,954,1389" shape="poly">
+		<area id="tucannon" onmouseover="show('Basins_Tucannon.jpg')" target="_blank" href="http://10.10.10.63" coords="1327,214,1546,212,1620,271,1671,343,1637,405,1622,483,1603,534,1698,488,1734,509,1804,515,1758,449,1804,343,1768,282,1836,218,1849,167,1702,131,1666,155,1537,70,1440,61,1380,89,1295,66,1287,148" shape="poly">
+	</map>
+
+</div>
+  
+  
+  <script> 
+  
+	function show(filename){
+		jQuery('#basins-map').attr("src",filename);
+	};
+  
+	$(document).ready(function() {
+		$('map').imageMapResize();
+	});
+  
+</script>
+  
+</body>
+</html>
+
+
